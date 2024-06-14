@@ -10,8 +10,19 @@ const io = require('socket.io')(servidorHttp, {
     }
 });
 
+
+const regist = {
+    id: 'door',
+    state: 'open'
+}
+
+
+
 io.addListener('connection', (socket) => {
     console.log('Um usuário conectou.')
+
+    io.emit('regist', regist);
+
     socket.addListener('nova mensagem', (msg) => {
         io.emit('nova mensagem', msg);        
     });
