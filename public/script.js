@@ -17,6 +17,13 @@ socket.addEventListener('regist', (regist) => {
     $('.state').text(regist.state);
 })
 
+socket.addEventListener('update connected', (connected) => {
+    $('#connected').empty()
+    connected.forEach(c => {
+        $('#connected').append(`<p>${c}</p>`);
+    });
+});
+
 // socket.addEventListener('nova mensagem', (msg) => {
 //     const elementoMensagem = document.createElement('li') // cria uma tag <li></li>
 //     elementoMensagem.textContent = msg;

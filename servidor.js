@@ -17,15 +17,24 @@ const regist = {
 }
 
 
+const connected = []
+
+
 
 io.addListener('connection', (socket) => {
     console.log('Um usuário conectou.')
 
+    const client_id = socket.id;
+
+    connected.push(client_id);
+    
     io.emit('regist', regist);
 
-    socket.addListener('nova mensagem', (msg) => {
-        io.emit('nova mensagem', msg);        
-    });
+    io.emit('update connected', connected);
+
+    // socket.addListener('nova mensagem', (msg) => {
+    //     io.emit('nova mensagem', msg);        
+    // });
 });
 
 app.use(express.static('public'));
