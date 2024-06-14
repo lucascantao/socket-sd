@@ -10,16 +10,12 @@ const io = require('socket.io')(servidorHttp, {
     }
 });
 
-
 const regist = {
     id: 'door',
     state: 'open'
 }
 
-
-const connected = []
-
-
+let connected = []
 
 io.addListener('connection', (socket) => {
     console.log('Um usuário conectou.')
@@ -31,6 +27,11 @@ io.addListener('connection', (socket) => {
     io.emit('regist', regist);
 
     io.emit('update connected', connected);
+
+    socket.conn.on('close', (reason) => {
+        connected = connected.filter((id) => id !== client_id);
+        io.emit('update connected', connected);
+    });
 
     // socket.addListener('nova mensagem', (msg) => {
     //     io.emit('nova mensagem', msg);        

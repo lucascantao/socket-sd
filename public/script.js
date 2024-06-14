@@ -11,6 +11,7 @@ const socket = io('localhost:3000');
 //     }
 // });
 
+$('#my_id p').text('aslj')
 
 socket.addEventListener('regist', (regist) => {
     $('.id').text(regist.id);
