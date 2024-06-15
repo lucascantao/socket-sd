@@ -4,14 +4,9 @@ const chat = document.getElementById('mensagens');
 
 const socket = io('localhost:3000');
 
-// botaoEnviar.addEventListener('click', () => {
-//     if(caixaDeMensagem.value !== "") {
-//         socket.emit('nova mensagem', caixaDeMensagem.value);
-//         caixaDeMensagem.value = "";
-//     }
-// });
-
-$('#my_id p').text('aslj')
+socket.on('connect', () => {
+    $('#myId span').text(socket.id);
+});
 
 socket.addEventListener('regist', (regist) => {
     $('.id').text(regist.id);
@@ -20,14 +15,7 @@ socket.addEventListener('regist', (regist) => {
 
 socket.addEventListener('update connected', (connected) => {
     $('#connected').empty()
-    connected.forEach(c => {
-        $('#connected').append(`<p>${c}</p>`);
+    connected.forEach((c, i) => {
+        $('#connected').append(`<div class="client-item"> <div class="client-item-id">${i}</div> <div class="client-item-value" >${c}</div> </div>`);
     });
 });
-
-// socket.addEventListener('nova mensagem', (msg) => {
-//     const elementoMensagem = document.createElement('li') // cria uma tag <li></li>
-//     elementoMensagem.textContent = msg;
-//     elementoMensagem.classList.add('mensagem'); // define uma class <li class='mensagem'>mensagem</li>
-//     chat.appendChild(elementoMensagem); // <div id='mensagens'><li class='mensagem'></li></div>
-// });

@@ -7,21 +7,21 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <header><img src="./assets/hashtag.svg" alt="" />Chat</header>
+    <header>
+
+      <div id="myId">
+        ID: <span></span>
+      </div>
+
+    </header>
     <main>
-      <!-- <div id="mensagens">
-      </div> -->
-
-      <div class="my_id">
-        <h1>MY ID</h1>
-        <p></p>
+      <div>
+        <label>Clients</label>
+        <div id="connected">
+          
+        </div>
       </div>
 
-      <hr>
-
-      <div id="connected">
-        
-      </div>
 
       <div id="objects">
 
@@ -31,23 +31,6 @@
         <i class="state"></i>
 
       </div>
-
-
-      <!-- <div id="envio-mensagens">
-        <input id="texto" autocomplete="off" autofocus />
-        <button id="enviar">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            fill="currentColor"
-            class="bi bi-send-fill"
-            viewBox="0 0 16 16">
-            <path
-              d="M15.964.686a.5.5 0 0 0-.65-.65L.767 5.855H.766l-.452.18a.5.5 0 0 0-.082.887l.41.26.001.002 4.995 3.178 3.178 4.995.002.002.26.41a.5.5 0 0 0 .886-.083zm-1.833 1.89L6.637 10.07l-.215-.338a.5.5 0 0 0-.154-.154l-.338-.215 7.494-7.494 1.178-.471z" />
-          </svg>
-        </button>
-      </div> -->
     </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.socket.io/4.7.5/socket.io.min.js" integrity="sha384-2huaZvOR9iDzHqslqwpR87isEmrfxqyWOF7hr7BY6KG0+hVKLoEXMPUJw3ynWuhO" crossorigin="anonymous"></script>
