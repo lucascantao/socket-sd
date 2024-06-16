@@ -21,10 +21,17 @@ socket.on('connect', () => {
 //     })
 // })
 
-socket.addEventListener('update connected', (connected) => {
-    $('#connected').empty()
-    connected.forEach((c, i) => {
-        $('#connected').append(`<div class="client-item"> <div class="client-item-id">${i}</div> <div class="client-item-value" >${c}</div> </div>`);
+socket.addEventListener('update clients', (clients) => {
+    $('#clients').empty()
+    clients.forEach((client) => {
+        $('#clients').append(`
+            <div class="client-item"> 
+                <img class="client-item-icon" src="./assets/icons/${client.icon}.png"></img> 
+                <div>
+                    <div class="client-item-name">${client.name}</div> 
+                    <div class="client-item-id" >#${client.id}</div> 
+                </div>
+            </div>`);
     });
 });
 
@@ -36,14 +43,14 @@ socket.addEventListener('mensagens', (mensagens) => {
         if(socket.id === msg.socket){
             $('#mensagens').append(
                 `<div class="mensagem-item user">
-                    <i class="socket">${msg.socket}</i>
+                    <i class="socket">${msg.name}</i>
                     <i class="content">${msg.content}</i>
                 </div>`
             )    
         } else {
             $('#mensagens').append(
                 `<div class="mensagem-item">
-                    <i class="socket">${msg.socket}</i>
+                    <i class="socket">${msg.name}</i>
                     <i class="content">${msg.content}</i>
                 </div>`
             )
@@ -54,15 +61,19 @@ socket.addEventListener('mensagens', (mensagens) => {
 
 $('#enviarMensagem').on('click', () => {
     const content = $('#mensagemContent').val();
-    socket.emit('nova mensagem', (content));
+    if(content === ''){
+        alert('a mensagem não pode ser vazia');
+    } else {
+        socket.emit('nova mensagem', (content));
+    }
 })
 
-$('#bind').on('click', () =>{
-    const id = $('#objectId').val();
-    const icon = $('#icon').val();
-    socket.emit('bind', (
+$('#join_button').on('click', () =>{
+    const name = $('#join_name').val();
+    const icon = $('#join_icon').val();
+    socket.emit('join', (
         {
-            id: id,
+            name: name,
             icon: icon
         }
     ));
