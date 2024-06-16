@@ -8,6 +8,7 @@ main {
   padding: 1rem;
 
   display: flex;
+  margin-bottom: 80px;
 }
 
 header {
@@ -36,7 +37,7 @@ header {
   color: white;
 }
 
-#objectId, #icon {
+#objectId, #icon, #mensagemValue, #mensagem button {
   padding: 12px 14px;
   border-radius: 4px;
   border: none;
@@ -84,6 +85,83 @@ header {
   padding: 8px 12px 8px 8px;
 }
 
+#mensagens {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  padding: 1rem;
+}
+
+#mensagem {
+  position: fixed;
+  height: 80px;
+  width: 100%;
+  border: solid black 1px;
+  bottom: 0;
+  left: 0;
+
+  display: flex;
+  justify-content: center;
+
+  background-color: cadetblue;
+
+  padding: 8px 14px;
+}
+
+#mensagem button {
+  height: 40px;
+  margin-left: 1rem;
+}
+
+#mensagem button:hover {
+  cursor: pointer;
+}
+
+#mensagemValue {
+  height: 40px;
+  width: 80%;
+}
+
+.mensagem-item {
+  min-height: 40px;
+  width: fit-content;
+  background-color: rgb(62, 64, 67);
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+
+  padding: 10px 25px 20px 10px;
+  border-radius: 4px;
+
+  margin-bottom: 1rem;
+  
+}
+
+.mensagem-item.user {
+  margin-left: auto;
+}
+
+.mensagem-item.user .socket{
+  color: chartreuse;
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+
+.mensagem-item .socket{
+  color: lightpink;
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+.mensagem-item .content {
+  color: white;
+  font-size: 18px;
+}
+
+/* 
 .object-item {
   display: flex;
   justify-content: center;
@@ -109,4 +187,4 @@ header {
   height: 64px;
   width: 64px;
 }
-
+ */

@@ -18,6 +18,11 @@ const objects = [
     }
 ]
 
+
+const mensagens = [
+    
+]
+
 let connected = []
 
 // ao se conectar no servidor
@@ -33,6 +38,8 @@ io.addListener('connection', (socket) => {
 
     // atualizar a lista de objetos no client
     io.emit('objects', objects);
+
+    io.emit('mensagens', mensagens);
 
     // ao se desconectar
     socket.conn.on('close', (reason) => {
@@ -77,9 +84,11 @@ io.addListener('connection', (socket) => {
         io.emit('objects', objects);
     });
 
-    // socket.addListener('nova mensagem', (msg) => {
-    //     io.emit('nova mensagem', msg);        
-    // });
+    socket.addListener('nova mensagem', (mensagem) => {
+        const novaMensagem = { socket: socket.id, content: mensagem };
+        mensagens.push(novaMensagem);
+        io.emit('mensagens', mensagens);
+    });
 });
 
 app.use(express.static('public'));
