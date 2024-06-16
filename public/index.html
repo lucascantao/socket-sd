@@ -9,29 +9,40 @@
   <body>
     <header>
 
+      <!-- Client id -->
       <div id="myId">
         ID: <span></span>
       </div>
 
+      <!-- Bind input -->
+      <div id="bindContainer">
+        <label for="objId">objId</label>
+        <input id="objectId" type="text">
+        <select name="icon" id="icon">
+          <option value="Sampo">Sampo</option>
+          <option value="Dan">Dan</option>
+          <option value="Herta">Herta</option>
+          <option value="Seele">Seele</option>
+        </select>
+        <button type="button" id="bind">Bind</button>
+      </div>
+
     </header>
+
     <main>
-      <div>
-        <label>Clients</label>
+      <!-- Connected clients -->
+      <div id="">
+        <div class="col-header">Clients</div>
         <div id="connected">
           
         </div>
       </div>
 
-
+      <!-- Binded clients -->
       <div id="objects">
-
-        <label>id:</label>
-        <i class="id"></i>
-        <label>state:</label>
-        <i class="state"></i>
-
       </div>
     </main>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.socket.io/4.7.5/socket.io.min.js" integrity="sha384-2huaZvOR9iDzHqslqwpR87isEmrfxqyWOF7hr7BY6KG0+hVKLoEXMPUJw3ynWuhO" crossorigin="anonymous"></script>
     <script src="./script.js"></script>
