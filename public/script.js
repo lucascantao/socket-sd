@@ -54,7 +54,7 @@ $('#enviarMensagem').on('click', () => {
 $('#join_button').on('click', () =>{
     const name = $('#join_name').val();
     const icon = $('#join_icon').val();
-    socket.emit('join', (
+    socket.emit('join_request', (
         {
             name: name,
             icon: icon

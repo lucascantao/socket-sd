@@ -25,7 +25,7 @@ io.addListener('connection', (socket) => {
     // atualizar a lista de conectados no client
     io.emit('update clients', clients);
 
-    socket.addListener('join', (client) => {
+    socket.addListener('join_request', (client) => {
 
         //busca cliente
         const local_client = clients.find( c => c.name === client.name );
@@ -68,31 +68,6 @@ io.addListener('connection', (socket) => {
 
         // atualizar informações no front
         io.emit('update clients', clients);
-    });
-
-    
-    socket.addListener('bind', (bindObject) => {
-
-        const object = objects.find( obj => obj.id === bindObject.id );
-
-        console.log(object)
-
-        if(object !== undefined) {
-            object.socket = socket.id;
-            object.icon = bindObject.icon
-            console.log(`bind ${socket.id} to ${bindObject.id}`);      
-        } else  {
-            objects.push(
-                {
-                    id: bindObject.id,
-                    socket: socket.id,
-                    icon: bindObject.icon
-                }
-            );
-            console.log(`bind ${socket.id} to ${bindObject.id}`);
-        }
-        
-        io.emit('objects', objects);
     });
 
 });
