@@ -10,9 +10,7 @@ const io = require('socket.io')(servidorHttp, {
     }
 });
 
-const mensagens = [
-    
-]
+const mensagens = []
 
 let clients = []
 

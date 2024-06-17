@@ -9,34 +9,43 @@
   <body>
     <header>
 
-      <!-- Client id -->
-      <div id="myId">
-        ID: <span></span>
+      <div>
+        <!-- Client id -->
+        <div id="myId">
+          ID: <span></span>
+        </div>
+
+        <!-- Bind input -->
+        <div id="join_container">
+
+          <label for="join_name">name</label>
+          <input id="join_name" type="text">
+
+          <label for="join_icon">icon</label>
+          <select name="icon" id="join_icon">
+            <option value="Sampo">1</option>
+            <option value="Dan">2</option>
+            <option value="Herta">3</option>
+            <option value="Seele">4</option>
+          </select>
+          
+          <button type="button" id="join_button">Join</button>
+        </div>
+
+
       </div>
 
-      <!-- Bind input -->
-      <div id="join_container">
 
-        <label for="join_name">name</label>
-        <input id="join_name" type="text">
+      <h1 style="color: white; margin-right: 2rem;">SocketChat.SD</h1>
 
-        <label for="join_icon">icon</label>
-        <select name="icon" id="join_icon">
-          <option value="Sampo">1</option>
-          <option value="Dan">2</option>
-          <option value="Herta">3</option>
-          <option value="Seele">4</option>
-        </select>
-        
-        <button type="button" id="join_button">Join</button>
-      </div>
+      
 
     </header>
 
     <main>
       <!-- Connected clients -->
       <div id="clientes">
-        <div class="col-header">Clietes Conectados</div>
+        <div class="col-header">Clientes Conectados</div>
         <div id="clients">
           
         </div>

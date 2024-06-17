@@ -19,6 +19,14 @@ header {
 
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+header > div{
+
+  display: flex;
+  align-items: center;
   padding: 1rem;
 }
 
