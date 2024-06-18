@@ -1,4 +1,4 @@
-const socket = io('localhost:3000');
+const socket = io('ws://localhost:3000');
 
 socket.on('connect', () => {
     $('#myId span').text(socket.id);

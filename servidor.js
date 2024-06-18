@@ -15,15 +15,16 @@ const mensagens = []
 let clients = []
 
 // ao se conectar no servidor
-io.addListener('connection', (socket) => {
+io.on('connection', (socket) => {
     console.log('Um usuário conectou.')
+    console.log(socket.handshake)
 
     // atualizar a lista de mensagens no client
     io.emit('mensagens', mensagens);
     // atualizar a lista de conectados no client
     io.emit('update clients', clients);
 
-    socket.addListener('join_request', (client) => {
+    socket.on('join_request', (client) => {
 
         //busca cliente
         const local_client = clients.find( c => c.name === client.name );
@@ -46,7 +47,7 @@ io.addListener('connection', (socket) => {
 
     });
 
-    socket.addListener('nova mensagem', (mensagem) => {
+    socket.on('nova mensagem', (mensagem) => {
         const client = clients.find(client => client.id === socket.id);
 
         if(client === undefined) {
