@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Real-Time Chat Application</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header>
+
+      
+        <!-- Client id -->
+        <div id="myId">
+          ID: <span></span>
+        </div>
+
+        <!-- Bind input -->
+        <div id="join_container">
+
+          <label for="join_name">name</label>
+          <input id="join_name" type="text">
+
+          <label for="join_icon">icon</label>
+          <select name="icon" id="join_icon">
+            <option value="Sampo">1</option>
+            <option value="Dan">2</option>
+            <option value="Herta">3</option>
+            <option value="Seele">4</option>
+          </select>
+          
+          <button type="button" id="join_button">Join</button>
+        </div>
+
+
+
+
+      <!-- <h1 style="color: white; margin-right: 2rem;">SocketChat.SD</h1> -->
+
+      
+
+    </header>
+
+    <main>
+      <!-- Connected clients -->
+      <div id="clientes">
+        <div class="col-header">Clientes Conectados</div>
+        <div id="clients">
+          
+        </div>
+      </div>
+
+      <div id="mensagens">
+
+      </div>
+
+      <footer id="mensagem">
+        <input type="text" id="mensagemContent">
+        <button id="enviarMensagem">Enviar</button>
+      </footer>
+
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.socket.io/4.7.5/socket.io.min.js" integrity="sha384-2huaZvOR9iDzHqslqwpR87isEmrfxqyWOF7hr7BY6KG0+hVKLoEXMPUJw3ynWuhO" crossorigin="anonymous"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,192 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  height: 100vh;
+}
+
+header {
+  position: fixed;
+  top: 0;
+
+  background-color: darkslategrey;
+  height: 128px;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  /* justify-content: space-between; */
+  padding: 1rem;
+}
+/* 
+header > div{
+
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+} */
+
+#myId {
+  font-weight: bold;
+  color: white;
+}
+
+#myId span {
+  padding: 12px 14px;
+  border-radius: 4px;
+  background-color: rgb(80, 207, 165);
+  color: white;
+}
+
+#join_container {
+  margin-left: 1rem;
+  color: white;
+}
+
+main {
+  margin-top: 128px;
+  
+  height: 100%;
+  background-color: rgb(46, 43, 46);
+  
+  display: flex;
+  margin-bottom: 80px;
+}
+
+#join_name, #join_icon, #mensagemValue, #mensagem button {
+  padding: 12px 14px;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  color: rgb(91, 91, 91);
+}
+
+#join_button {
+  padding: 12px 14px;
+  border-radius: 4px;
+  border: none;
+  background-color: green;
+  color: white;
+}
+
+#join_button:hover {
+  background-color: darkgreen;
+  cursor: pointer;
+}
+
+#clientes {
+  color: white;
+  /* width: 200px; */
+  padding: 1rem;
+}
+
+.col-header {
+  margin-bottom: 1rem;
+}
+
+#clients {
+  
+}
+
+.client-item {
+  margin-bottom: 1rem;
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+.client-item-icon {
+  height: 64px;
+  width: 64px;
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+
+.client-item-name {
+  font-size: large;
+}
+
+.client-item-id {
+  color: gray;
+  font-size: smaller;
+}
+
+#mensagens {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  padding: 1rem;
+
+  border-left: solid black 1px;
+}
+
+#mensagem {
+  position: fixed;
+  height: 80px;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+
+  display: flex;
+  align-items: center;
+  background-color: cadetblue;
+
+  padding: 8px 14px;
+}
+
+#mensagem button {
+  height: 40px;
+  margin-left: 1rem;
+}
+
+#mensagem button:hover {
+  cursor: pointer;
+}
+
+#mensagem input {
+  height: 40px;
+  width: 100%;
+}
+
+.mensagem-item {
+  min-height: 40px;
+  width: fit-content;
+  background-color: rgb(62, 64, 67);
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+
+  padding: 10px 25px 20px 10px;
+  border-radius: 4px;
+
+  margin-bottom: 1rem;
+  
+}
+
+.mensagem-item.user {
+  margin-left: auto;
+}
+
+.mensagem-item.user .socket{
+  color: chartreuse;
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+
+.mensagem-item .socket{
+  color: lightpink;
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+.mensagem-item .content {
+  color: white;
+  font-size: 18px;
+}

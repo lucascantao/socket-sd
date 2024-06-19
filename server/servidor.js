@@ -16,8 +16,8 @@ let clients = []
 
 // ao se conectar no servidor
 io.on('connection', (socket) => {
-    console.log('Um usuário conectou.')
-    console.log(socket.handshake)
+    console.log('Um usuário conectou.', socket.handshake.headers.origin);
+    console.log()
 
     // atualizar a lista de mensagens no client
     io.emit('mensagens', mensagens);
